@@ -1,4 +1,4 @@
-# Internshala Backend Assignment
+# PrimeTrade.ai
 
 FastAPI REST API with JWT authentication, role-based access, Postgres, Docker Compose, and a Vanilla JS dashboard.
 
@@ -95,3 +95,58 @@ See `.env.example`.
 ## Scalability Note
 
 The app is split by API, models, schemas, and core infrastructure so new modules can be added without crowding the main file. For a larger deployment, add Alembic migrations, refresh tokens, Redis caching for expensive reads, structured logging, centralized secrets, and run the API behind a load balancer with multiple Uvicorn workers.
+
+## Implementation Screenshots
+
+### Login Page
+
+<p align="center">
+  <img width="1896" height="837" alt="Login Page" src="https://github.com/user-attachments/assets/68a45246-d7ce-408b-aeb5-3d22129fb475" />
+</p>
+
+---
+
+### User Dashboard
+
+<p align="center">
+  <img width="1855" height="835" alt="User Dashboard" src="https://github.com/user-attachments/assets/791470c0-2c83-4bf2-bad7-a3cac4b075e0" />
+</p>
+
+---
+
+### Admin Dashboard
+
+#### User Management View
+
+<p align="center">
+  <img width="1917" height="868" alt="Admin Dashboard - Users" src="https://github.com/user-attachments/assets/b3c2a34f-2d5c-4c1b-b3c2-89cfb1337d1e" />
+</p>
+
+#### Notes Management View
+
+<p align="center">
+  <img width="1815" height="832" alt="Admin Dashboard - Notes" src="https://github.com/user-attachments/assets/7ca166d5-44cf-4fd7-8edc-87c3789a4633" />
+</p>
+
+---
+
+## PostgreSQL & pgAdmin Setup
+
+### pgAdmin Dashboard
+
+<p align="center">
+  <img width="1918" height="870" alt="pgAdmin Dashboard" src="https://github.com/user-attachments/assets/8fad5a2a-d451-4fb3-997c-29d14c944939" />
+</p>
+
+### Database Connection Configuration
+
+<p align="center">
+  <img width="1917" height="845" alt="Database Connection Setup" src="https://github.com/user-attachments/assets/a38df469-72b4-4656-9155-63d7ae2c4971" />
+</p>
+
+### Database Tables Overview
+
+<p align="center">
+  <img width="1918" height="871" alt="Database Tables" src="https://github.com/user-attachments/assets/2c67c4c8-5b96-4e17-8c91-f577c4702516" />
+</p>
+
