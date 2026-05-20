@@ -1,0 +1,288 @@
+:root {
+  --bg: #f7f5ef;
+  --ink: #1d2430;
+  --muted: #667085;
+  --line: #d8d3c6;
+  --panel: #ffffff;
+  --brand: #0d6b5f;
+  --brand-dark: #084a43;
+  --accent: #b24830;
+  --danger: #a52828;
+  --success-bg: #e4f5ee;
+  --error-bg: #fbe7e2;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  min-height: 42px;
+  border: 0;
+  border-radius: 6px;
+  background: var(--brand);
+  color: #fff;
+  padding: 0.72rem 1rem;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+button:hover {
+  background: var(--brand-dark);
+}
+
+button.ghost {
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink);
+}
+
+button.danger {
+  background: var(--danger);
+}
+
+input,
+textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 0.72rem 0.8rem;
+  color: var(--ink);
+  background: #fffdf8;
+}
+
+textarea {
+  resize: vertical;
+}
+
+label {
+  display: grid;
+  gap: 0.38rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 0;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+h2 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+h3 {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.app-shell {
+  width: min(1120px, calc(100vw - 2rem));
+  margin: 0 auto;
+  padding: 2rem 0 4rem;
+}
+
+.topbar {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.5rem 0 2rem;
+}
+
+.eyebrow {
+  margin-bottom: 0.4rem;
+  color: var(--accent);
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.session {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.auth-grid,
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.dashboard {
+  grid-template-columns: 360px minmax(0, 1fr);
+  align-items: start;
+}
+
+.panel {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  padding: 1rem;
+}
+
+.panel form,
+form.panel {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.panel-heading h2 {
+  margin-bottom: 0;
+}
+
+.message {
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  font-weight: 700;
+}
+
+.message.success {
+  background: var(--success-bg);
+  color: #15563f;
+}
+
+.message.error {
+  background: var(--error-bg);
+  color: #7d2619;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.check-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.check-row input {
+  width: 18px;
+  height: 18px;
+}
+
+.notes-list {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.note-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.75rem;
+  border-top: 1px solid var(--line);
+  padding-top: 0.9rem;
+}
+
+.note-item:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.note-title {
+  font-weight: 800;
+}
+
+.note-content {
+  margin-top: 0.55rem;
+}
+
+.note-actions {
+  display: grid;
+  align-content: start;
+  gap: 0.5rem;
+}
+
+.compact {
+  margin-top: 0.45rem;
+  font-size: 0.85rem;
+}
+
+.empty {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.admin-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.admin-grid ul {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.admin-grid span {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 820px) {
+  .topbar,
+  .note-item {
+    align-items: stretch;
+    grid-template-columns: 1fr;
+  }
+
+  .topbar {
+    display: grid;
+  }
+
+  .session {
+    justify-content: flex-start;
+  }
+
+  .auth-grid,
+  .dashboard,
+  .admin-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .note-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+

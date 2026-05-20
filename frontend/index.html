@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Notes API Dashboard</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="topbar">
+        <div>
+          <p class="eyebrow">FastAPI + JWT</p>
+          <h1>Notes Dashboard</h1>
+        </div>
+        <div class="session">
+          <span id="userBadge">Signed out</span>
+          <button id="logoutBtn" class="ghost hidden" type="button">Logout</button>
+        </div>
+      </section>
+
+      <section id="message" class="message hidden" role="status"></section>
+
+      <section id="authView" class="auth-grid">
+        <form id="registerForm" class="panel">
+          <h2>Register</h2>
+          <label>
+            Full name
+            <input id="registerName" name="fullName" autocomplete="name" maxlength="120" />
+          </label>
+          <label>
+            Email
+            <input id="registerEmail" name="email" type="email" autocomplete="email" required />
+          </label>
+          <label>
+            Password
+            <input
+              id="registerPassword"
+              name="password"
+              type="password"
+              autocomplete="new-password"
+              minlength="8"
+              maxlength="72"
+              required
+            />
+          </label>
+          <button type="submit">Create account</button>
+        </form>
+
+        <form id="loginForm" class="panel">
+          <h2>Login</h2>
+          <label>
+            Email
+            <input id="loginEmail" name="email" type="email" autocomplete="email" required />
+          </label>
+          <label>
+            Password
+            <input
+              id="loginPassword"
+              name="password"
+              type="password"
+              autocomplete="current-password"
+              maxlength="72"
+              required
+            />
+          </label>
+          <button type="submit">Login</button>
+        </form>
+      </section>
+
+      <section id="dashboardView" class="dashboard hidden">
+        <form id="noteForm" class="panel note-form">
+          <h2>Add note</h2>
+          <label>
+            Title
+            <input id="noteTitle" maxlength="120" required />
+          </label>
+          <label>
+            Content
+            <textarea id="noteContent" maxlength="2000" rows="4"></textarea>
+          </label>
+          <label class="check-row">
+            <input id="noteCompleted" type="checkbox" />
+            Completed
+          </label>
+          <button type="submit">Save note</button>
+        </form>
+
+        <section class="panel">
+          <div class="panel-heading">
+            <h2>Your notes</h2>
+            <button id="refreshNotesBtn" class="ghost" type="button">Refresh</button>
+          </div>
+          <div id="notesList" class="notes-list"></div>
+        </section>
+
+        <section id="adminPanel" class="panel hidden">
+          <div class="panel-heading">
+            <h2>Admin</h2>
+            <button id="loadAdminBtn" class="ghost" type="button">Load data</button>
+          </div>
+          <div class="admin-grid">
+            <div>
+              <h3>Users</h3>
+              <ul id="adminUsers"></ul>
+            </div>
+            <div>
+              <h3>All notes</h3>
+              <ul id="adminNotes"></ul>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
+
