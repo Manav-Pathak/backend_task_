@@ -8,3 +8,10 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Local secrets
+.env
+
+# Local database / editor noise
+*.sqlite3
+.DS_Store

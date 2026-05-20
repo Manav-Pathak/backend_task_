@@ -1,0 +1,35 @@
+services:
+  api:
+    build: .
+    container_name: internshala_notes_api
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgresql+psycopg2://app_user:app_password@db:5432/internshala_app
+      JWT_SECRET_KEY: change-this-compose-secret
+      JWT_ACCESS_TOKEN_MINUTES: 60
+      FRONTEND_ORIGINS: http://localhost:8000
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: postgres:18-alpine
+    container_name: internshala_notes_db
+    environment:
+      POSTGRES_DB: internshala_app
+      POSTGRES_USER: app_user
+      POSTGRES_PASSWORD: app_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U app_user -d internshala_app"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:
+
