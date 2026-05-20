@@ -116,13 +116,11 @@ The app is split by API, models, schemas, and core infrastructure so new modules
 
 ### Admin Dashboard
 
-#### User Management View
 
 <p align="center">
   <img width="1917" height="868" alt="Admin Dashboard - Users" src="https://github.com/user-attachments/assets/b3c2a34f-2d5c-4c1b-b3c2-89cfb1337d1e" />
 </p>
 
-#### Notes Management View
 
 <p align="center">
   <img width="1815" height="832" alt="Admin Dashboard - Notes" src="https://github.com/user-attachments/assets/7ca166d5-44cf-4fd7-8edc-87c3789a4633" />
@@ -132,7 +130,7 @@ The app is split by API, models, schemas, and core infrastructure so new modules
 
 ## PostgreSQL & pgAdmin Setup
 
-### pgAdmin Dashboard
+### Table schema
 
 <p align="center">
   <img width="1918" height="870" alt="pgAdmin Dashboard" src="https://github.com/user-attachments/assets/8fad5a2a-d451-4fb3-997c-29d14c944939" />
